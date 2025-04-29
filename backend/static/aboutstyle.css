@@ -1,0 +1,131 @@
+body {
+    padding-bottom: 40px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar {
+    background-color: #1a1a2e !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.about-card {
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1) !important;
+}
+
+.about-title {
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+.about-content {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #4a5568;
+}
+
+.social-links .btn {
+    border-radius: 50px !important;
+    padding: 10px 25px !important;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    transition: all 0.3s ease;
+    margin-right: 10px;
+}
+
+.social-links .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.social-links .btn-dark {
+    background-color: #000000 !important;
+    border-color: #2d3748 !important;
+}
+
+.social-links .btn-primary {
+    background-color: #0077b5 !important;
+    border-color: #0077b5 !important;
+}
+
+.social-links .btn-success {
+    background-color: #28a745 !important;
+    border-color: #28a745 !important;
+}
+
+.social-links .btn-success:hover {
+    background-color: #218838 !important;
+    border-color: #1e7e34 !important;
+}
+
+
+.dark-mode {
+    background-color: #121212 !important;
+    color: white !important;
+}
+
+.dark-mode .about-card {
+    background-color: #2d3748;
+    color: white;
+    border: none;
+}
+
+.dark-mode .about-title {
+    color: #f7fafc;
+}
+
+.dark-mode .about-content {
+    color: #e2e8f0;
+}
+
+.btn {
+    border-radius: 50px !important;
+    padding: 10px 20px !important;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    transition: all 0.3s ease;
+}
+
+footer {
+    background-color: #f8f9fa;
+    color: #6c757d;
+    padding: 15px 0;
+    transition: background-color 0.3s, color 0.3s;
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-size: 16px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 5px 10px;
+    border-radius: 10px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.dark-mode footer {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #ddd;
+}
+
+@media (max-width: 768px) {
+    .about-card {
+        margin: 0 15px;
+    }
+    
+    .social-links .btn {
+        margin-bottom: 10px;
+    }
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Sentiment Analyzer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='indexstyles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Cinzel:wght@400;700&family=Oswald:wght@400;700&family=Playfair+Display:wght@400;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container d-flex justify-content-between">
+            <a class="navbar-brand" href="/">🎬 Movie Sentiment Analyzer</a>
+            
+            <div class="d-flex align-items-center">
+                <button id="darkModeToggle" class="btn btn-outline-light me-2">🌙</button>
+                <a href="{{ url_for('about') }}" class="btn about-btn"><i class="fas fa-info-circle"></i> About</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="search-container text-center mb-5">
+                    <h2 class="mb-4 animate__animated animate__fadeInDown app-title">Search for a Movie</h2>
+                    
+                    <div class="d-flex justify-content-center position-relative">
+                        <div class="input-group w-75 animate__animated animate__fadeInDown">
+                            <input type="search" id="movieTitle" class="form-control" 
+                                placeholder="Enter movie title..." oninput="fetchSuggestions()">
+                            <button class="btn btn-primary search-btn" onclick="fetchMovie()">
+                                <i class="fas fa-search"></i> Search
+                            </button>
+                        </div>
+                        <ul id="suggestionsList" class="list-group position-absolute w-75" style="display: none; z-index: 1000;"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="movieDetails" class="mt-4 mb-5"></div>
+        
+        <div class="review-section mt-5">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="card review-card shadow-sm">
+                        <div class="card-body">
+                            <h2 class="text-center mb-4 animate__animated animate__fadeInUp">Analyze Your Review</h2>
+                            <div class="d-flex flex-column">
+                                <textarea id="userReview" class="form-control animate__animated animate__fadeInUp" 
+                                    placeholder="Write your review here..." rows="4"></textarea>
+                                <button class="btn btn-success mt-3 align-self-center animate__animated animate__fadeInUp analyze-btn" onclick="analyzeReview()">
+                                    <i class="fas fa-clipboard-check me-2"></i> Analyze Sentiment
+                                </button>
+                            </div>
+                            <div id="loadingSpinner" class="text-center mt-4" style="display: none;">
+                                <div class="spinner-border" role="status"></div>
+                                <p class="mt-2">Analyzing your review...</p>
+                            </div>
+                            <div id="sentimentResult" class="text-center mt-4"></div>
+                            <div id="chartContainer" class="mt-4" style="display: none;">
+                                <canvas id="sentimentChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center py-3 mt-5">
+        <div class="container">
+            <small>© Made By Aditya Dolas with ❤️</small>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='indexscript.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
