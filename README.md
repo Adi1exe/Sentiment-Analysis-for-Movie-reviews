@@ -100,5 +100,5 @@ Contributions are welcome! Please fork the repository and create a pull request 
 ## License
 This project is open source and available under the MIT License.
 
-* Author *
+* Author
 [GitHub](https://github.com/Adi1exe) | [LinkedIn](https://www.linkedin.com/in/aditya-dolas-992a44265/) | [My Portfolio](https://adityadolas.netlify.app/)
