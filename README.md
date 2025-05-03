@@ -58,10 +58,16 @@ nltk.download('punkt')
 ## Usage
 
 Step 1: Load and preprocess the dataset
-The dataset loading and preprocessing is handled in the scripts:
+The dataset loading and preprocessing is handled in the scripts (run these files):
+```
 load_dataset.py - loads the dataset
+```
+```
 preprocess.py - cleans and preprocesses the text data
+```
+```
 feature_engineering.py - performs feature extraction
+```
 
 Step 2: Train the model
 Run the training script:
